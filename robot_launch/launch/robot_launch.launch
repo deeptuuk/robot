@@ -1,0 +1,7 @@
+<launch>
+    <master auto="start"/>
+    <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 0 0 base_link imu_data 100" />
+    <node pkg="tf" type="static_transform_publisher" name="link2_broadcaster" args="0 0 0 0 0 0 base_link laser 100" />
+    <node pkg="robot_serial" type="robot_serial" name="robot_serial" output="screen" />
+    <node pkg="robot_odometry" type="robot_odometry_pub" name="robot_odometry" />
+</launch>
